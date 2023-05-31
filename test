@@ -1,1 +1,11 @@
-test file
+#!/bin/bash
+
+ROOT="/binary_trees"
+
+files=$(find "$ROOT" -name "*.c")
+
+for file in $files
+do
+	echo "running betty on $file"
+	betty "$file"
+done
