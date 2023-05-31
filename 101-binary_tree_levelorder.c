@@ -5,7 +5,7 @@
 #include <stddef.h>
 
 /**
- * binary_tree_height - height of a binary tree
+ * binary_tre_height - height of a binary tree
  * Description: function that measures the height of a binary tree
  * @tree: pointer to the root node of the tree to traverse
  * Return: Number
@@ -56,13 +56,13 @@ void print_levelO(const binary_tree_t *tree, void (*func)(int), size_t lev)
  */
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 {
-        size_t i, h;
+	size_t i, h;
 
-        if (tree == NULL || func == NULL)
-                return;
-        h = binary_tre_height(tree);
-        for (i = 1; i <= h; i++)
-        {
-                print_levelO(tree, func, i);
-        }
+	if (tree == NULL || func == NULL)
+		return;
+	h = binary_tre_height(tree);
+	for (i = 1; i <= h; i++)
+	{
+		print_levelO(tree, func, i);
+	}
 }

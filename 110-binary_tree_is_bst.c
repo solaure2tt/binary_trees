@@ -12,7 +12,8 @@
  * Return: 1 if tree is a valid BST, 0 otherwise.
  */
 
-int helper(const binary_tree_t *tree, const binary_tree_t *min, const binary_tree_t *max)
+int helper(const binary_tree_t *tree,
+		const binary_tree_t *min, const binary_tree_t *max)
 {
 	if (tree == NULL)
 		return (1);
