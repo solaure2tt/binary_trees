@@ -5,18 +5,18 @@
 #include <stddef.h>
 
 /**
- * binary_tree_is_leaf - cheks leaf
- * Description: function that checks if a node is a leaf
+ * binary_tree_is_root - cheks root
+ * Description: function that checks if a node is a root
  * @node: pointer to the node to check
  * Return: 0 or 1
  */
-int binary_tree_is_leaf(const binary_tree_t *node)
+int binary_tree_is_root(const binary_tree_t *node)
 {
 	int answer = 0;
 
 	if (node != NULL)
 	{
-		if (node->left == NULL && node->right == NULL)
+		if (node->parent == NULL)
 			answer = 1;
 	}
 	return (answer);
