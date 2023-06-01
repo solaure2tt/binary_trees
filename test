@@ -6,6 +6,7 @@ files=$(find "$ROOT" -name "*.c")
 
 for file in $files
 do
+	echo " "
 	echo "running betty on $file"
 	betty "$file"
 done
