@@ -9,25 +9,28 @@
  */
 int main(void)
 {
-    binary_tree_t *root;
-    binary_tree_t *uncle;
+    bst_t *root;
+    bst_t *node;
 
-    root = binary_tree_node(NULL, 98);
-    root->left = binary_tree_node(root, 12);
-    root->right = binary_tree_node(root, 128);
-    root->left->right = binary_tree_node(root->left, 54);
-    root->right->right = binary_tree_node(root->right, 402);
-    root->left->left = binary_tree_node(root->left, 10);
-    root->right->left = binary_tree_node(root->right, 110);
-    root->right->right->left = binary_tree_node(root->right->right, 200);
-    root->right->right->right = binary_tree_node(root->right->right, 512);
-
+    root = NULL;
+    node = bst_insert(&root, 98);
+    printf("Inserted: %d\n", node->n);
+    node = bst_insert(&root, 402);
+    printf("Inserted: %d\n", node->n);
+    node = bst_insert(&root, 12);
+    printf("Inserted: %d\n", node->n);
+    node = bst_insert(&root, 46);
+    printf("Inserted: %d\n", node->n);
+    node = bst_insert(&root, 128);
+    printf("Inserted: %d\n", node->n);
+    node = bst_insert(&root, 256);
+    printf("Inserted: %d\n", node->n);
+    node = bst_insert(&root, 512);
+    printf("Inserted: %d\n", node->n);
+    node = bst_insert(&root, 1);
+    printf("Inserted: %d\n", node->n);
+    node = bst_insert(&root, 128);
+    printf("Node should be nil -> %p\n", (void *)node);
     binary_tree_print(root);
-    uncle = binary_tree_uncle(root->right->left);
-    printf("Uncle of %d: %d\n", root->right->left->n, uncle->n);
-    uncle = binary_tree_uncle(root->left->right);
-    printf("Uncle of %d: %d\n", root->left->right->n, uncle->n);
-    uncle = binary_tree_uncle(root->left);
-    printf("Uncle of %d: %p\n", root->left->n, (void *)uncle);
     return (0);
 }
